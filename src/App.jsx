@@ -106,12 +106,20 @@ export default function App() {
       </AppBar>
 
       <Container maxWidth="lg" sx={{ py: 3 }}>
-        <Tabs value={tab} onChange={(_, v) => setTab(v)} sx={{ mb: 3 }}>
-          <Tab label="Course Types" />
-          <Tab label="Courses" />
-          <Tab label="Course Offerings" />
-          <Tab label="Student Registrations" />
-        </Tabs>
+        <Tabs
+  value={tab}
+  onChange={(_, v) => setTab(v)}
+  variant="scrollable"
+  scrollButtons="auto"
+  allowScrollButtonsMobile
+  sx={{ mb: 3 }}
+>
+  <Tab label="Course Types" />
+  <Tab label="Courses" />
+  <Tab label="Course Offerings" />
+  <Tab label="Student Registrations" />
+</Tabs>
+
 
         <Box hidden={tab !== 0}>
           <CourseTypes lists={lists} actions={actions} />
